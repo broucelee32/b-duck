@@ -8,12 +8,12 @@ declare var $;
   styleUrls: ['./quiz.component.scss']
 })
 export class QuizComponent implements OnInit {
-  randomCount;
-  quesObject = {};
-  queslist = queslists;
-  stepCount = 0; // 횟수 카운트
-  resultCount = 0; // 정답 카운트
-  resultText: string;
+  queslist = queslists; // 문제 리스트
+  randomCount; // 랜덤으로 보여지는 문제
+  quesObject = {}; // 랜덤으로 골라진 객체;
+  stepCount = 0; // 횟수 카운트;
+  resultCount = 0; // 정답 카운트;
+  resultText: string; // 성공 실패 텍스트 현재는 사용 안됨
 
   constructor() { }
 
@@ -23,6 +23,7 @@ export class QuizComponent implements OnInit {
 
   // 랜덤 문제 가져오기 중복되지 않게
   qzStart() {
+    const randomarr = []; // 나온숫자 비교할 배열
     this.randomCount = Math.floor(Math.random() * 20);
     console.log(this.randomCount);
     this.quesObject = this.queslist[this.randomCount];
@@ -86,13 +87,6 @@ export class QuizComponent implements OnInit {
     }
 
   }
-
-  rendomList(min, max) {
-    let result;
-    result = Math.floor(Math.random() * (max - min + 1)) + min;
-    return result;
-  }
-
   //페이지 새로 고침
   refresh() {
     window.location.reload()
