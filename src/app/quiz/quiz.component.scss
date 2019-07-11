@@ -1,3 +1,23 @@
-.box{
+.box {
   display: none;
+}
+.step_list {
+  display: block;
+  overflow: hidden;
+
+  span{
+    display: inline-block;
+    width:100px;
+    height:100px;
+    background: #ddd;
+    border-radius: 50%;
+
+    &.succes {
+      background-color:#f00;
+    }
+
+    &.fail {
+      background-color: #000;
+    }
+  }
 }

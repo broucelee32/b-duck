@@ -9,7 +9,7 @@ declare var $;
 })
 export class QuizComponent implements OnInit {
   randomCount;
-  quesname = {};
+  quesObject = {};
   queslist = queslists;
   stepCount = 0; // 횟수 카운트
   resultCount = 0; // 정답 카운트
@@ -23,8 +23,9 @@ export class QuizComponent implements OnInit {
 
   // 랜덤 문제 가져오기 중복되지 않게
   qzStart() {
-    this.randomCount = Math.floor(Math.random() * 20) + 1;
-    this.quesname = this.queslist[this.randomCount].name;
+    this.randomCount = Math.floor(Math.random() * 20);
+    console.log(this.randomCount);
+    this.quesObject = this.queslist[this.randomCount];
     this.stepCount++; // 시작 하면 1 번으로;
     if (this.resultCount === 3) {
       $('#exampleModal').modal('show');
@@ -40,7 +41,50 @@ export class QuizComponent implements OnInit {
     } else {
       this.resultText = "실패 :''ㅠ_ㅠ''!!!";
     }
-    this.qzStart();
+    switch (this.stepCount) {
+      case 1 :
+        if (info === ox) {
+          $('.step_list span:nth-child(1)').addClass('succes');
+        } else {
+          $('.step_list span:nth-child(1)').addClass('fail');
+        }
+        break;
+      case 2 :
+        if (info === ox) {
+          $('.step_list span:nth-child(2)').addClass('succes');
+        } else {
+          $('.step_list span:nth-child(2)').addClass('fail');
+        }
+        break;
+      case 3 :
+        if (info === ox) {
+          $('.step_list span:nth-child(3)').addClass('succes');
+        } else {
+          $('.step_list span:nth-child(3)').addClass('fail');
+        }
+        break;
+      case 4 :
+        if (info === ox) {
+          $('.step_list span:nth-child(4)').addClass('succes');
+        } else {
+          $('.step_list span:nth-child(4)').addClass('fail');
+        }
+        break;
+      case 5 :
+        if (info === ox) {
+          $('.step_list span:nth-child(5)').addClass('succes');
+        } else {
+          $('.step_list span:nth-child(5)').addClass('fail');
+        }
+        break;
+    }
+
+    if (this.stepCount >= 5 ) {
+      $('#exampleModal2').modal('show');
+    } else {
+      this.qzStart();
+    }
+
   }
 
   rendomList(min, max) {
