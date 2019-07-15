@@ -11,7 +11,7 @@ declare var $;
 export class QuizComponent implements OnInit {
  queslist = queslists; // 문제 리스트
  randomCount; // 랜덤으로 보여지는 문제
- quesObject = {}; // 랜덤으로 골라진 객체;
+ quesObject: any; // 랜덤으로 골라진 객체;
  stepCount = 0; // 횟수 카운트;
  resultCount = 0; // 정답 카운트;
  resultText: string; // 성공 실패 텍스트 현재는 사용 안됨
