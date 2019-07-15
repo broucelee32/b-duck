@@ -24,14 +24,9 @@ export class QuizComponent implements OnInit {
 
  // 랜덤 문제 가져오기 중복되지 않게
  qzStart() {
-   const randomarr = []; // 나온숫자 비교할 배열
    this.randomCount = Math.floor(Math.random() * 20);
-   console.log(this.randomCount);
    this.quesObject = this.queslist[this.randomCount];
    this.stepCount++; // 시작 하면 1 번으로;
-   if (this.resultCount === 3) {
-     $('#exampleModal').modal('show');
-   }
  }
 
  // 메인 가기전
@@ -45,10 +40,7 @@ export class QuizComponent implements OnInit {
  result(info) {
    const ox = this.queslist[this.randomCount].result;
    if (info === ox) {
-     this.resultText = "성공 ^^ !!!";
      this.resultCount++;
-   } else {
-     this.resultText = "실패 :''ㅠ_ㅠ''!!!";
    }
    switch (this.stepCount) {
      case 1 :
@@ -87,17 +79,18 @@ export class QuizComponent implements OnInit {
        }
        break;
    }
-
-   if (this.stepCount >= 5 ) {
-     $('#exampleModal2').modal('show');
+   console.log(this.resultCount);
+   if (this.resultCount === 3) {
+    $('#exampleModal').modal('show');
+  }
+   if (this.stepCount >= 5) {
+     if (this.resultCount === 3) {
+      $('#exampleModal').modal('show');
+     } else {
+      $('#exampleModal2').modal('show');
+     }
    } else {
      this.qzStart();
    }
-
  }
- //페이지 새로 고침
- refresh() {
-   window.location.reload()
- }
-
 }
