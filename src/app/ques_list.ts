@@ -4,7 +4,7 @@ export const queslists = [
   { id: 3, name: '비덕의 동생 이름은?', url: './assets/image/3/1.jpg', url0: './assets/image/3/0.jpg', urlq: './assets/image/3/img.jpg', result: 1},
   { id: 4, name: '진짜 비덕을 찾아주세요.', url: './assets/image/4/1.jpg', url0: './assets/image/4/0.jpg', urlq: './assets/image/4/img.jpg', result: 0},
   { id: 5, name: '비덕의 나이는?', url: './assets/image/5/1.jpg', url0: './assets/image/5/0.jpg', urlq: './assets/image/5/img.jpg', result: 1},
-  { id: 6, name: '비덕의친구가 아닌 캐릭터는?', url: './assets/image/6/1.jpg', url0: './assets/image/6/0.jpg', urlq: './assets/image/6/img.jpg', result: 0},
+  { id: 6, name: '비덕의 친구가 아닌 캐릭터는?', url: './assets/image/6/1.jpg', url0: './assets/image/6/0.jpg', urlq: './assets/image/6/img.jpg', result: 0},
   { id: 7, name: 'BEEZE가 가장 좋아하는 장소는?', url: './assets/image/7/1.jpg', url0: './assets/image/7/0.jpg', urlq: './assets/image/7/img.jpg', result: 0},
   { id: 8, name: 'FEBY의 직업은?', url: './assets/image/8/1.jpg', url0: './assets/image/8/0.jpg', urlq: './assets/image/8/img.jpg', result: 1},
   { id: 9, name: 'ICE의 취미는?', url: './assets/image/9/1.jpg', url0: './assets/image/9/0.jpg', urlq: './assets/image/9/img.jpg', result: 1},
