@@ -110,3 +110,41 @@
     }
   }
  }
+ .modal-dialog {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  max-width:100%;
+}
+
+.modal-content {
+  height: auto;
+  min-height: 100%;
+  border-radius: 0;
+  background-color:transparent !important;
+}
+
+ #exampleModal{
+  background-image: url(../../assets/image/success.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 50%;
+ }
+
+ #exampleModal2{
+  background-image: url(../../assets/image/fail.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 50%;
+ }
+
+ .full_btn{
+   position: absolute;
+   left:0;
+   top:0;
+   z-index: 10000;
+   width:100%;
+   height:100%;
+   background-color: transparent !important;
+ }

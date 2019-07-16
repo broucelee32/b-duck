@@ -14,9 +14,25 @@ export class QuizComponent implements OnInit {
  quesObject: any; // 랜덤으로 골라진 객체;
  stepCount = 0; // 횟수 카운트;
  resultCount = 0; // 정답 카운트;
+ notresultCount = 0; // 오답 카운트;
  resultText: string; // 성공 실패 텍스트 현재는 사용 안됨
+ randomArry: any;
+ nu = 0;
 
- constructor(private router: Router) { }
+ constructor(private router: Router) {
+  const rannuber2 = [];
+  for (let i = 0; i < 8; i++) {
+    const rannuber = Math.floor(Math.random() * 20);
+     rannuber2.push(rannuber);
+  }
+  let ranresult = rannuber2.reduce(( a, b ) => {
+    if( a.indexOf(b) < 0 ) a.push(b) ;
+    return a ;
+  }, []) ;
+  this.randomArry = ranresult;
+  console.log(this.randomArry);
+
+  }
 
  ngOnInit() {
    this.qzStart();
@@ -24,7 +40,7 @@ export class QuizComponent implements OnInit {
 
  // 랜덤 문제 가져오기 중복되지 않게
  qzStart() {
-   this.randomCount = Math.floor(Math.random() * 20);
+   this.randomCount = this.randomArry[this.nu];
    this.quesObject = this.queslist[this.randomCount];
    this.stepCount++; // 시작 하면 1 번으로;
  }
@@ -41,7 +57,10 @@ export class QuizComponent implements OnInit {
    const ox = this.queslist[this.randomCount].result;
    if (info === ox) {
      this.resultCount++;
+   } else {
+    this.notresultCount++;
    }
+   this.nu++; // 문제 index 증가
    switch (this.stepCount) {
      case 1 :
        if (info === ox) {
@@ -79,11 +98,13 @@ export class QuizComponent implements OnInit {
        }
        break;
    }
-   console.log(this.resultCount);
-   if (this.resultCount === 3) {
-    $('#exampleModal').modal('show');
-  }
-   if (this.stepCount >= 5) {
+    if (this.resultCount === 3) {
+      $('#exampleModal').modal('show');
+    }
+    if (this.notresultCount === 3) {
+      $('#exampleModal2').modal('show');
+    }
+    if (this.stepCount >= 5) {
      if (this.resultCount === 3) {
       $('#exampleModal').modal('show');
      } else {
