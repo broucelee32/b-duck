@@ -1,0 +1,17 @@
+.main{
+  width:100%;
+  height:100%;
+  background-image: url(../../assets/image/index.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 50%;
+
+  .main_btn{
+      position:absolute;
+      left:0;
+      top:0;
+      width:100%;
+      height:100%;
+
+  }
+}

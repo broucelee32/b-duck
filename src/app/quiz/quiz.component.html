@@ -1,0 +1,94 @@
+<div class="quiz_wrap">
+  <div class="quiz_wrap_box">
+      <h2 class="logo" (click)="goHome()"><img src="./assets/image/logo.jpg" width="180"></h2>
+ 
+      <div class="box" id="box1" style="display: block;">
+        <h2 class="sub_title">
+          <strong>Quiz {{stepCount}}</strong>
+        </h2>
+        <div class="quiz_list_area">
+          <div class="row">
+            <div class="col-4 p_quiz_img">
+                <img [src]="quesObject.urlq" alt="">
+            </div>
+            <div class="col-8 align-self-center p_quiz">
+              {{quesObject.name}}
+            </div>
+          </div>
+          <ul class="row quiz_list_box">
+            <li class="col-6" (click)="result(1)">
+              <div>
+                  <img [src]="quesObject.url" alt="">
+              </div>
+ 
+            </li>
+            <li class="col-6" (click)="result(0)">
+              <div>
+                  <img [src]="quesObject.url0" alt="">
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </div>
+ </div>
+ 
+ <div class="step_list">
+  <span>
+    <img src="./assets/image/duck_2.jpg" class="so">
+    <img src="./assets/image/duck_1.jpg" class="ok">
+    <img src="./assets/image/duck_0.jpg" class="no">
+  </span>
+  <span>
+      <img src="./assets/image/duck_2.jpg" class="so">
+      <img src="./assets/image/duck_1.jpg" class="ok">
+      <img src="./assets/image/duck_0.jpg" class="no">
+  </span>
+  <span>
+      <img src="./assets/image/duck_2.jpg" class="so">
+      <img src="./assets/image/duck_1.jpg" class="ok">
+      <img src="./assets/image/duck_0.jpg" class="no">
+  </span>
+  <span>
+      <img src="./assets/image/duck_2.jpg" class="so">
+      <img src="./assets/image/duck_1.jpg" class="ok">
+      <img src="./assets/image/duck_0.jpg" class="no">
+  </span>
+  <span>
+      <img src="./assets/image/duck_2.jpg" class="so">
+      <img src="./assets/image/duck_1.jpg" class="ok">
+      <img src="./assets/image/duck_0.jpg" class="no">
+  </span>
+ </div>
+ <!-- Modal -->
+ <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">3회 성공!!!!! 대박</h5>
+      </div>
+      <div class="modal-body">
+        선물이 와르르르르르
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" [routerLink]="['/']">Close</button>
+ 
+      </div>
+    </div>
+  </div>
+ </div>
+ <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">실패 다음 기회에 ㅠㅠ</h5>
+      </div>
+      <div class="modal-body">
+        아쉽소
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" [routerLink]="['/']">나가기</button>
+      </div>
+    </div>
+  </div>
+ </div>
